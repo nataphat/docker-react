@@ -12,4 +12,6 @@ RUN npm install
 
 FROM nginx
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY ./app/build /usr/share/nginx/html
+
+CMD ["npm","run","start"]
